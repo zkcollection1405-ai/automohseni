@@ -1,0 +1,246 @@
+/* ===== پایه ===== */
+:root{--ink:#222;--bg:#f2f4f5;--dark:#191b1d;--gold:#d4a51f;--gold2:#f1b900;--line:#dcdcdc;--danger:#a51e16;--ok:#17692a;--safeB:env(safe-area-inset-bottom,0px);--safeT:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;touch-action:manipulation}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,system-ui,"SF Arabic","Geeza Pro","Vazirmatn","B Yekan",Yekan,Tahoma,"Segoe UI",Arial,sans-serif;font-size:14px;direction:rtl;line-height:1.55}
+button,input,select,textarea{font-family:inherit;font-size:14px;direction:rtl;text-align:right;color:inherit}
+button{touch-action:manipulation}
+svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.clear{clear:both}
+body.modalOpen{overflow:hidden}
+
+/* ===== قاب اصلی ===== */
+#sidebar{position:fixed;right:0;top:0;bottom:0;width:238px;background:var(--dark);color:#fff;overflow:auto;z-index:900;-webkit-overflow-scrolling:touch}
+#brand{padding:12px;text-align:center;border-bottom:1px solid #34383a;background:#121416;padding-top:calc(12px + var(--safeT))}
+#brand img{width:132px;max-height:92px;object-fit:contain;border-radius:6px}
+.brandName{font-size:18px;font-weight:bold;color:var(--gold2);margin-top:3px}
+.brandSmall{font-size:11px;color:#bbb}
+.menu{padding:8px 8px calc(16px + var(--safeB))}
+.menuBtn{display:block;width:100%;padding:11px 12px;margin:2px 0;border:0;border-radius:8px;background:transparent;color:#eee;text-align:right;cursor:pointer}
+.menuBtn:hover,.menuBtn.active{background:#373b3e;color:#ffd252}
+#scrim{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:850}
+#content{margin-right:238px;padding:15px 17px 30px;min-height:100vh}
+#topbar{display:flex;align-items:center;gap:10px;min-height:52px;background:#fff;border:1px solid #ddd;border-radius:8px;padding:8px 12px;margin-bottom:12px}
+#topbar h1{margin:0;font-size:20px;flex:1}
+#topbar .meta{color:#777;font-size:11px}
+.iconBtn{display:none;border:0;background:transparent;color:inherit;width:40px;height:40px;border-radius:8px;align-items:center;justify-content:center;padding:0}
+#tabbar,#fab{display:none}
+.page{display:none}.page.active{display:block}
+
+/* ===== شبکه و کارت ===== */
+.row{width:100%}
+.col4{width:24%;display:inline-block;vertical-align:top;margin-left:.6%;margin-bottom:10px}
+.col3{width:32.3%;display:inline-block;vertical-align:top;margin-left:.6%;margin-bottom:10px}
+.col2{width:49%;display:inline-block;vertical-align:top;margin-left:.7%;margin-bottom:10px}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;box-shadow:0 2px 7px rgba(0,0,0,.04)}
+.card h3{margin:0 0 8px}
+.kpiTitle{color:#666;font-size:12px;margin-bottom:5px}
+.kpiValue{font-size:19px;font-weight:bold;word-break:break-word}
+.kpiDanger{color:var(--danger)}.kpiOk{color:var(--ok)}
+.sectionHead{margin:14px 0 8px;min-height:34px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.sectionHead h2{margin:0;font-size:16px}
+.sectionHead .actions{display:flex;flex-wrap:wrap;gap:6px}
+
+/* ===== دکمه و فرم ===== */
+.btn{border:0;border-radius:8px;padding:9px 13px;cursor:pointer;background:#2d3236;color:#fff;margin:0 0 0 4px}
+.btn:hover{background:#111}
+.btnGold{background:var(--gold);color:#111;font-weight:bold}.btnGold:hover{background:#b98d0b}
+.btnLight{background:#eee;color:#222;border:1px solid #d2d2d2}.btnLight:hover{background:#e2e2e2}
+.btnDanger{background:#b42c24}
+.btnSmall{padding:6px 10px;font-size:12px}
+.btnBlock{width:100%;padding:12px;font-size:15px}
+.searchBox{width:360px;max-width:100%;padding:10px;border:1px solid #bbb;border-radius:8px;background:#fff}
+.tableBox{background:#fff;border:1px solid #d7d7d7;border-radius:8px;overflow:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:760px}
+th,td{padding:9px 7px;border-bottom:1px solid #e6e6e6;text-align:right;white-space:nowrap}
+th{background:#292d30;color:#ffe082;font-size:12px}
+tr:hover td{background:#fafafa}
+td select{padding:5px;border:1px solid #bbb;border-radius:6px;background:#fff}
+.badge{display:inline-block;border-radius:12px;padding:3px 8px;font-size:11px;font-weight:bold}
+.bOk{background:#e5f4e7;color:var(--ok)}.bWarn{background:#fff2c7;color:#775800}.bBad{background:#fae2e0;color:#9f1e17}.bGray{background:#eceff1;color:#4b565c}
+.empty{padding:24px;text-align:center;color:#777;background:#fff;border:1px solid #ddd;border-radius:8px}
+.notice{padding:10px 11px;border-radius:8px;background:#fff5d6;border:1px solid #ecd17b;color:#554200;margin-bottom:10px;line-height:1.8}
+.okNotice{background:#e8f4e9;border-color:#acd1b0;color:#185625}
+.badNotice{background:#fce6e4;border-color:#ebb0ab;color:#7b1a15}
+.infoNotice{background:#eef5fb;border-color:#b8d2e8;color:#274b66}
+.noticeAct{margin-top:8px}
+.formGrid{width:100%}
+.fg{display:inline-block;vertical-align:top;width:32.4%;margin-left:.5%;margin-bottom:10px}
+.fg2{width:49%}.fgFull{width:99%}
+.fg label{display:block;color:#555;font-size:12px;margin-bottom:4px}
+.fg input,.fg select,.fg textarea{width:100%;padding:9px;border:1px solid #bbb;border-radius:8px;background:#fff}
+.fg textarea{height:86px;resize:vertical}
+.fg input[readonly]{background:#fffdf2;cursor:pointer}
+.moneyBig{font-size:28px;font-weight:bold;color:var(--danger)}.moneyOk{color:var(--ok)}
+.statLine{padding:8px 9px;background:#fafafa;border:1px solid #e4e4e4;border-radius:6px;margin-bottom:6px;display:flex;justify-content:space-between;gap:8px}
+.subHead{font-size:14px;font-weight:bold;color:#222;border-right:4px solid var(--gold);padding:5px 8px;margin:14px 0 8px;background:#faf8ef}
+.miniTable table{min-width:620px}
+.muted{color:#777;font-size:12px}
+.lineList{margin:4px 0;padding-right:20px;white-space:normal}.lineList li{margin:3px 0}
+.invoiceTools{margin:12px 0;display:flex;flex-wrap:wrap;gap:6px}
+.checkBox{padding:8px;border:1px solid #e2e2e2;background:#fafafa;border-radius:8px;margin-top:4px}
+.jobPick{border:1px solid #ddd;background:#fafafa;border-radius:8px;padding:9px}
+.jobPickRow{display:flex;gap:6px;align-items:center;margin-bottom:7px}
+.jobPickRow select{width:44%}.jobPickRow input{width:37%}.jobPickRow .btn{margin:0;white-space:nowrap}
+.jobPick textarea{height:105px}
+.switchRow{padding:7px 9px;background:#fafafa;border:1px solid #ddd;border-radius:6px;margin-bottom:8px}
+#footer{color:#888;font-size:11px;text-align:center;margin-top:18px;padding:8px}
+
+/* ===== پلاک ===== */
+.plateBox{display:flex;align-items:center;direction:ltr;gap:5px;width:100%;background:#fafafa;border:1px solid #d4d4d4;border-radius:8px;padding:6px 7px;overflow:hidden;height:50px}
+.plateBox .flag{display:flex;align-items:center;justify-content:center;flex:0 0 38px;height:34px;border-radius:5px;background:#0c4c9a;color:#fff;font-size:8px;line-height:1.05;text-align:center}
+.plateBox .cell{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #bdbdbd;border-radius:7px;height:36px}
+.plateBox .fg input,.plateBox input,.plateBox select{border:0!important;border-radius:7px!important;text-align:center!important;height:34px!important;padding:4px!important;background:#fff!important;direction:rtl;min-width:0}
+.plateBox .p2{width:54px}.plateBox .p3{width:80px}.plateBox .letter{width:76px}
+.plateBox .iranCell{display:flex;align-items:center;justify-content:center;gap:4px;background:#fff;border:1px solid #bdbdbd;border-radius:7px;height:36px;padding:0 5px}
+.plateBox .iranCell input{width:44px}
+.plateBox .iranWord{writing-mode:vertical-rl;transform:rotate(180deg);font-size:10px;color:#333}
+.plateView{display:inline-flex;align-items:center;direction:ltr;gap:4px;background:#fafafa;border:1px solid #d2d2d2;border-radius:7px;padding:4px 6px;min-width:220px}
+.plateView .pvFlag{width:28px;height:27px;border-radius:4px;background:#0c4c9a;color:#fff;font-size:7px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1}
+.plateView .pvCell{min-width:31px;height:27px;border:1px solid #bbb;border-radius:5px;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#222;padding:0 7px}
+.plateView .pvLetter{min-width:44px}.plateView .pvSerial{min-width:58px}
+.plateView .pvIran{display:flex;align-items:center;gap:3px;height:27px;border:1px solid #bbb;border-radius:5px;background:#fff;padding:0 5px}
+.plateView .pvIran span:first-child{font-size:9px;writing-mode:vertical-rl;transform:rotate(180deg);color:#444}
+
+/* ===== تقویم ===== */
+.dateWrap{display:flex;gap:6px;align-items:stretch}
+.dateWrap input[readonly]{flex:1 1 auto;width:auto!important;min-width:0}
+.dateWrap .calBtn{flex:0 0 auto;width:auto!important;margin:0!important;padding:0 12px!important;text-align:center!important;cursor:pointer;background:var(--gold)!important;color:#111!important;font-weight:bold!important;border:1px solid #b78a0a!important;border-radius:8px!important}
+#calShade{display:none;position:fixed;z-index:2000;inset:0;background:rgba(0,0,0,.4)}
+#calBox{position:absolute;width:340px;max-width:94vw;right:50%;top:16%;transform:translateX(50%);background:#fff;border:1px solid #777;border-radius:12px;padding:10px;box-shadow:0 12px 38px rgba(0,0,0,.3)}
+#calHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+#calHead .btn{margin:0}
+#calTitle{font-weight:bold;text-align:center}
+.calFoot{text-align:center;margin-top:8px}
+.calTbl{width:100%;min-width:0!important;table-layout:fixed}
+.calTbl th,.calTbl td{text-align:center;padding:10px 2px;white-space:normal;border:0}
+.calTbl th{background:#333;color:#ffd65c}
+.calDay{cursor:pointer;border-radius:6px}.calDay:hover{background:#ffe9a9}
+.calToday{border:1px solid var(--gold)!important;font-weight:bold}
+
+/* ===== پنجره ویرایش ===== */
+#modalShade{display:none;position:fixed;z-index:1000;inset:0;background:rgba(0,0,0,.5)}
+#modal{position:absolute;right:50%;top:3%;transform:translateX(50%);width:960px;max-width:96%;max-height:94%;display:flex;flex-direction:column;background:#fff;border-radius:12px;border:1px solid #777;box-shadow:0 15px 50px rgba(0,0,0,.35);overflow:hidden}
+#modalHead{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #ddd;flex:0 0 auto}
+#modalHead h3{margin:0;font-size:16px}
+.closeBtn{border:0;background:#eee;width:34px;height:34px;border-radius:8px;cursor:pointer;font-size:20px;line-height:1;padding:0;text-align:center}
+#modalBody{flex:1 1 auto;overflow:auto;padding:12px 14px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+#modalFooter{display:none;flex:0 0 auto;gap:8px;flex-wrap:wrap;background:#fff;border-top:1px solid #d4d4d4;padding:10px 14px calc(10px + var(--safeB));box-shadow:0 -4px 12px rgba(0,0,0,.08)}
+#modalFooter[style*=block]{display:flex!important}
+#modalFooter .btn{min-width:90px;margin:0}
+.formActions{display:none}
+.invoiceBuilder{border:1px solid #ddd;border-radius:8px;background:#fafafa;padding:9px;margin:8px 0}
+.invoiceLine{display:flex;gap:5px;align-items:flex-end;border-bottom:1px solid #ddd;padding:7px 0}
+.invoiceLine>div{flex:1}.invoiceLine .narrow{max-width:80px}.invoiceLine .del{flex:0 0 56px}
+.invoiceLine label{display:block;font-size:11px;color:#666;margin-bottom:3px}
+.invoiceLine input,.invoiceLine select{width:100%;padding:8px;border:1px solid #bbb;border-radius:6px;background:#fff}
+.noteCard{background:#fff;border:1px solid #ddd;border-right:4px solid var(--gold);border-radius:8px;padding:10px;margin-bottom:8px}
+.noteCard.done{opacity:.7;border-right-color:#4b8a55}
+.noteTitle{font-weight:bold;font-size:15px}.noteMeta{font-size:12px;color:#777;margin-top:4px}
+.noteText{margin-top:7px;white-space:normal;line-height:1.8}
+.accountExplain{background:#eef5fb;border:1px solid #b8d2e8;color:#274b66;padding:9px;border-radius:8px;margin-bottom:10px;line-height:1.8}
+.payrollBar{background:#fff;border:1px solid #ddd;border-radius:8px;padding:10px;margin-bottom:10px}
+.payrollBar .monthInput{width:150px;padding:9px;border:1px solid #bbb;border-radius:8px}
+.payrollPos{color:var(--danger);font-weight:bold}.payrollNeg{color:var(--ok);font-weight:bold}
+.calcInfo{background:#fff5d6;border:1px solid #ecd17b;color:#554200;padding:8px;border-radius:8px;margin:5px 0}
+.employeeActions .btn{margin-bottom:4px}
+
+/* ===== ورود ===== */
+#loginShade{display:block;position:fixed;z-index:5000;inset:0;background:#151719;overflow:auto}
+#loginBox{width:370px;max-width:92%;margin:max(8vh,calc(var(--safeT) + 20px)) auto 20px;background:#fff;border-radius:14px;padding:22px;border-top:6px solid var(--gold);box-shadow:0 18px 60px rgba(0,0,0,.55);text-align:center}
+#loginBox img{width:170px;max-height:130px;object-fit:contain;border-radius:8px}
+#loginBox h2{margin:8px 0 2px}
+#loginBox .loginSub{color:#777;font-size:12px;margin-bottom:15px}
+#loginBox input{width:100%;padding:12px;border:1px solid #aaa;border-radius:8px;text-align:center;font-size:20px;direction:ltr;margin:7px 0 10px}
+.loginError{color:var(--danger);min-height:20px;font-size:12px}
+
+/* ===== پیام کوتاه ===== */
+#toast{position:fixed;left:50%;transform:translateX(-50%) translateY(20px);bottom:calc(76px + var(--safeB));background:#222;color:#fff;padding:10px 16px;border-radius:22px;opacity:0;pointer-events:none;transition:.25s;z-index:6000;max-width:90vw;text-align:center;font-size:13px}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#toast.bad{background:#b42c24}
+#installHint:empty{display:none}
+.imgPreview{max-width:100%;border:1px solid #ddd;border-radius:8px;display:block;margin:0 auto}
+
+/* ===== موبایل و تبلت عمودی ===== */
+@media (max-width:899px){
+  #sidebar{transform:translateX(100%);transition:transform .25s;box-shadow:-8px 0 30px rgba(0,0,0,.4);width:270px}
+  body.drawer #sidebar{transform:none}
+  body.drawer #scrim{display:block}
+  #content{margin-right:0;padding:0 12px calc(86px + var(--safeB))}
+  #topbar{position:sticky;top:0;z-index:700;margin:0 -12px 12px;border:0;border-radius:0;background:var(--dark);color:#fff;padding:calc(8px + var(--safeT)) 12px 8px;min-height:calc(54px + var(--safeT))}
+  #topbar h1{font-size:18px;color:var(--gold2)}
+  #topbar .meta{color:#9aa}
+  .iconBtn{display:flex}
+  #tabbar{display:flex;position:fixed;right:0;left:0;bottom:0;z-index:800;background:var(--dark);border-top:1px solid #000;padding:6px 4px calc(6px + var(--safeB))}
+  #tabbar button{flex:1;border:0;background:transparent;color:#aab;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;padding:4px 0;border-radius:8px}
+  #tabbar button.active{color:var(--gold2)}
+  #fab{position:fixed;left:14px;bottom:calc(76px + var(--safeB));z-index:790;border:0;background:var(--gold);color:#111;font-weight:bold;border-radius:28px;height:52px;padding:0 18px 0 20px;box-shadow:0 6px 18px rgba(0,0,0,.35);align-items:center;gap:6px}
+  body[data-page=dashboard] #fab,body[data-page=vehicles] #fab{display:flex}
+  body.modalOpen #fab,body.drawer #fab{display:none!important}
+  /* ورودی‌ها: ۱۶ پیکسل تا iOS زوم نکند */
+  button,input,select,textarea,.fg input,.fg select,.fg textarea{font-size:16px}
+  .btn{padding:11px 14px}.btnSmall{padding:9px 12px;font-size:14px}
+  .col4{width:49%}.col3,.col2{width:100%;margin-left:0}
+  .kpiValue{font-size:17px}
+  .fg,.fg2,.fgFull{width:100%;margin-left:0}
+  .searchBox{width:100%}
+  .sectionHead h2{font-size:15px}
+  .payrollBar .monthInput{width:100%;margin-top:6px}
+  /* پنجره = تمام صفحه */
+  #modal{top:0;right:0;transform:none;width:100%;max-width:100%;max-height:none;height:100%;border-radius:0;border:0}
+  #modalHead{padding:calc(10px + var(--safeT)) 12px 10px}
+  #modalBody{padding:12px}
+  #modalFooter .btn{flex:1 1 auto}
+  .invoiceLine{flex-wrap:wrap}
+  .invoiceLine>div{flex:1 1 44%}.invoiceLine .narrow{max-width:none}.invoiceLine .del{flex:1 1 100%}
+  .invoiceLine .del .btn{width:100%}
+  .jobPickRow{flex-wrap:wrap}.jobPickRow select,.jobPickRow input{width:100%}
+  .plateBox{gap:3px;padding:5px}
+  .plateBox .flag{flex-basis:30px}
+  .plateBox .p2{width:42px}.plateBox .p3{width:62px}.plateBox .letter{width:62px}.plateBox .iranCell input{width:36px}
+  #calBox{top:10%}
+  .calTbl td{padding:12px 2px;font-size:16px}
+  #toast{bottom:calc(76px + var(--safeB))}
+
+  /* جدول‌ها → کارت */
+  .tableBox{background:transparent;border:0;overflow:visible}
+  .tableBox table,.tableBox thead,.tableBox tbody,.tableBox tr,.tableBox td{display:block;width:100%;min-width:0!important}
+  .tableBox thead{display:none}
+  .tableBox tr{background:#fff;border:1px solid #ddd;border-radius:12px;margin-bottom:10px;padding:4px 12px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+  .tableBox td{display:flex;justify-content:space-between;align-items:center;gap:12px;border:0;border-bottom:1px dashed #eee;white-space:normal;padding:8px 0;text-align:right}
+  .tableBox td:last-child{border-bottom:0}
+  .tableBox td::before{content:attr(data-label);color:#777;font-size:12px;flex:0 0 auto}
+  .tableBox td>*:not(.plateView){max-width:70%;text-align:left}
+  .tableBox tr:hover td{background:transparent}
+  .tableBox td.act{display:block;padding:10px 0 6px}
+  .tableBox td.act::before{display:none}
+  .tableBox td.act>*{max-width:none;text-align:right}
+  .tableBox td.act .btn{margin:0 0 6px 6px}
+  .tableBox td.act:empty,.tableBox td:empty{display:none}
+  .plateView{min-width:0}
+}
+@media (min-width:900px){
+  .btn:active{transform:translateY(1px)}
+}
+
+/* ===== چاپ ===== */
+.printArea{display:none}
+@media print{
+  html,body{background:#fff}
+  #app,#modalShade,#calShade,#loginShade,#toast{display:none!important}
+  .printArea{display:block!important;color:#000;background:#fff}
+  .printArea img{max-width:120px}
+  .printArea table{min-width:0;width:100%}
+  .invoicePage{font-family:-apple-system,system-ui,"Geeza Pro",Tahoma,Arial;direction:rtl;margin:0 auto;width:190mm;min-height:270mm;padding:10mm;background:#fff;color:#000;font-size:13px}
+  .invHead{background:#151515!important;color:#fff;border-bottom:7px solid #d4a51f;padding:12px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .invHead h1{color:#f0b900;margin:10px 0 4px;font-size:25px}
+  .invInfo{border:1px solid #222;margin-top:8px}.invInfo td{border:1px solid #222;padding:6px;white-space:normal}
+  .invTable{margin-top:10px}
+  .invTable th{background:#171717!important;color:#f4be27;border:1px solid #111;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .invTable td{border:1px solid #555;white-space:normal}
+  .invTotal{margin-top:10px}.invTotal td{border:1px solid #222}
+  .invFoot{margin-top:18px;border-top:2px solid #d4a51f;padding-top:10px;display:flex;justify-content:space-between}
+  @page{size:A4;margin:8mm}
+}
+body:not([data-page=dashboard]) #installHint{display:none}
+@media (min-width:600px) and (max-width:899px){.tableBox tbody{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tableBox tr{margin:0}}

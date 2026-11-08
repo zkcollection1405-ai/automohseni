@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>اتو محسنی</title>
+<meta name="theme-color" content="#191b1d"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-title" content="اتو محسنی"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="format-detection" content="telephone=no"/>
+<link rel="manifest" href="manifest.webmanifest"/>
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" href="icons/icon-192.png"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <div id="brand"><img src="logo.jpg" alt=""/><div class="brandName">AUTO MOHSENI</div><div class="brandSmall">خدمات خودرویی اتومحسنی</div></div>
+    <nav class="menu" id="menu"></nav>
+  </aside>
+  <div id="scrim" onclick="toggleDrawer(false)"></div>
+
+  <main id="content">
+    <header id="topbar">
+      <button id="menuBtn" class="iconBtn" onclick="toggleDrawer()" aria-label="منو"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <h1 id="pageTitle">داشبورد</h1>
+      <span class="meta" id="saveState"></span>
+    </header>
+    <div id="installHint"></div>
+    <div id="dashboard" class="page active"></div><div id="vehicles" class="page"></div><div id="checks" class="page"></div><div id="suppliers" class="page"></div><div id="partners" class="page"></div><div id="parts" class="page"></div><div id="receipts" class="page"></div><div id="employees" class="page"></div><div id="expenses" class="page"></div><div id="accounts" class="page"></div><div id="notes" class="page"></div><div id="monthly" class="page"></div><div id="settlement" class="page"></div><div id="alerts" class="page"></div><div id="settings" class="page"></div><div id="backup" class="page"></div>
+    <div id="footer">اتو محسنی — سیستم مدیریت مالی و پذیرش صافکاری و PDR</div>
+  </main>
+
+  <nav id="tabbar"></nav>
+  <button id="fab" onclick="vehicleModal('')" aria-label="پذیرش جدید"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>پذیرش</span></button>
+</div>
+
+<div id="modalShade"><div id="modal"><div id="modalHead"><h3 id="modalTitle"></h3><button class="closeBtn" onclick="closeModal()" aria-label="بستن">×</button></div><div id="modalBody"></div><div id="modalFooter"></div></div></div>
+<div id="calShade"><div id="calBox"><div id="calHead"><button class="btn btnSmall" onclick="calMove(-1)">ماه قبل</button><span id="calTitle"></span><button class="btn btnSmall" onclick="calMove(1)">ماه بعد</button></div><div id="calBody"></div><div class="calFoot"><button class="btn btnLight btnSmall" onclick="calTodayPick()">امروز</button><button class="btn btnLight btnSmall" onclick="closeCal()">بستن</button></div></div></div>
+<div id="printArea" class="printArea"></div>
+<div id="loginShade"><div id="loginBox"><img src="logo.jpg" alt=""/><h2>خدمات خودرویی اتومحسنی</h2><div class="loginSub">برای ورود رمز برنامه را وارد کنید</div><input id="loginPassword" type="password" maxlength="30" autocomplete="off" onkeydown="if(event.keyCode==13)doLogin()"/><div id="loginError" class="loginError"></div><button class="btn btnGold btnBlock" onclick="doLogin()">ورود به برنامه</button></div></div>
+<div id="toast"></div>
+
+<script src="core.js"></script>
+<script src="platform.js"></script>
+</body>
+</html>
